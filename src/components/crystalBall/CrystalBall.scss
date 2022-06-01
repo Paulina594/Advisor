@@ -1,0 +1,96 @@
+.crystal-ball {
+  position: relative;
+  z-index: 8;
+
+  .ball {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(1px) drop-shadow(0 0 22px #72d6e5);
+    animation: magic-shadow 10s infinite both;
+
+
+    /* ff 3.6+ */
+    background: -moz-radial-gradient(circle at 50% 50%, rgb(101, 208, 241) 0%, rgba(141, 68, 255, 1) 100%);
+
+    /* safari 5.1+,chrome 10+ */
+    background: -webkit-radial-gradient(circle at 50% 50%, rgb(101, 208, 241) 0%, rgba(141, 68, 255, 1) 100%);
+
+    /* opera 11.10+ */
+    background: -o-radial-gradient(circle at 50% 50%, rgb(101, 208, 241) 0%, rgba(141, 68, 255, 1) 100%);
+
+    /* ie 10+ */
+    background: -ms-radial-gradient(circle at 50% 50%, rgb(101, 208, 241) 0%, rgba(141, 68, 255, 1) 100%);
+
+    /* global 92%+ browsers support */
+    background: radial-gradient(circle at 50% 50%, rgb(101, 208, 241) 0%, rgba(141, 68, 255, 1) 100%);
+
+    .magic {
+      position: absolute;
+      left: 10px;
+      bottom: -5px;
+      animation: magic-anim 10s infinite both;
+    }
+  }
+
+  .base {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 300px;
+    height: 100px;
+    background-color: #381b08;
+    border-radius: 100px 100px 20px 20px;
+    box-shadow: 0 0 5px #1a1c23;
+    filter: drop-shadow(1px -10px 52px #000);
+    z-index: -1;
+  }
+}
+
+
+@keyframes magic-anim {
+  from {
+    transform: skew(-1deg) rotate(1deg);
+  }
+  20% {
+    transform: skew(1deg) rotate(-1deg);
+  }
+  40% {
+    transform: skew(-2deg) rotate(-2deg);
+
+  }
+  60% {
+    transform: skew(0deg) rotate(0deg);
+
+  }
+  80% {
+    transform: skew(1deg) rotate(1deg);
+
+  }
+  to {
+    transform: skew(-1deg) rotate(1deg);
+  }
+}
+
+@keyframes magic-shadow {
+  from {
+    filter: blur(1px) drop-shadow(0 0 22px #72d6e5);
+  }
+  20% {
+    filter: blur(1px) drop-shadow(0 0 42px #8273ea);
+  }
+  40% {
+    filter: blur(1px) drop-shadow(0 0 32px #4f8ce7);
+  }
+  60% {
+    filter: blur(1px) drop-shadow(0 0 38px #88cb86);
+  }
+  80% {
+    filter: blur(1px) drop-shadow(0 0 28px #a46fdc);
+  }
+  to {
+    filter: blur(1px) drop-shadow(0 0 22px #72d6e5);
+  }
+}

@@ -1,0 +1,51 @@
+.description {
+  max-width: 500px;
+  color: azure;
+  line-height: 25px;
+  margin-bottom: 2rem;
+
+}
+
+
+.input-wrapper {
+  background-color: #FCE38A;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 5px #1a1c23;
+
+
+  label {
+    display: block;
+    color: #1a1c23;
+    margin-bottom: 20px;
+  }
+
+  input#scenario {
+    color: #1a1c23;
+    background-color: #FCE38A;
+    font-family: Kalam, Montserrat, sans-serif;
+    font-size: 20px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    resize: vertical;
+    width: 100%;
+    height: fit-content;
+
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  button {
+    display: block;
+    background: transparent;
+    padding: 10px;
+    border: 2px solid #1a1c23;
+    border-radius: 10px;
+    margin: 2rem auto 0;
+    cursor: pointer;
+  }
+}

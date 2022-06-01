@@ -1,0 +1,11 @@
+.answer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 40px;
+  transform: translate(-50%, -50%);
+  white-space: break-spaces;
+  word-break: break-word;
+  text-align: center;
+  z-index: 3;
+}
