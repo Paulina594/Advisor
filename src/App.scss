@@ -1,4 +1,23 @@
-
 body {
-  background: azure;
+  width: 100vw;
+  height: 80vh;
+  font-family: Montserrat;
+  overflow-x: hidden;
+
+  /* ff 3.6+ */
+  background:-moz-radial-gradient(circle at 50% 50%, rgba(103, 103, 103, 1) 0%, rgb(40, 40, 40) 100%);
+
+  /* safari 5.1+,chrome 10+ */
+  background:-webkit-radial-gradient(circle at 50% 50%, rgba(103, 103, 103, 1) 0%, rgb(40, 40, 40) 100%);
+
+  /* opera 11.10+ */
+  background:-o-radial-gradient(circle at 50% 50%, rgba(103, 103, 103, 1) 0%, rgb(40, 40, 40) 100%);
+
+  /* ie 10+ */
+  background:-ms-radial-gradient(circle at 50% 50%, rgba(103, 103, 103, 1) 0%, rgb(40, 40, 40) 100%);
+
+  /* global 92%+ browsers support */
+  background:radial-gradient(circle at 50% 50%, rgba(103, 103, 103, 1) 0%, rgb(40, 40, 40) 100%);
 }
+
+
