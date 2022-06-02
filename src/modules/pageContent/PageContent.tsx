@@ -47,7 +47,7 @@ export const PageContent = () => {
           />
         </div>
         <div className="row">
-          <SolutionsList />
+          <SolutionsList list={scenarioList} />
         </div>
       </div>
       <div className="column answer-wrapper">

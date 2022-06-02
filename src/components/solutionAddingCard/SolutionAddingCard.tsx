@@ -2,7 +2,13 @@ import React, { useState } from "react";
 
 import "./SolutionAddingCard.scss";
 
-export const SolutionAddingCard = (props: any) => {
+type SolutionAddingCardProps = {
+  input: string;
+  handleClick: () => void;
+  handleChange: (e: any) => void;
+};
+
+export const SolutionAddingCard = (props: SolutionAddingCardProps) => {
   const { input, handleClick, handleChange } = props;
 
   return (

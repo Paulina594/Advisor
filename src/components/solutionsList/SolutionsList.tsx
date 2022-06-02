@@ -2,11 +2,17 @@ import React from "react";
 
 import "./SolutionsList.scss";
 
-export const SolutionsList = () => {
+type SolutionsListProps = { list: string[] };
+
+export const SolutionsList = (props: SolutionsListProps) => {
+  const answer = props.list.map((solution: string) => (
+    <li key={props.list.indexOf(solution)}>{solution}</li>
+  ));
+
   return (
     <div className="solutions">
       <p>List of possible answers:</p>
-      <ul></ul>
+      <ol>{answer}</ol>
     </div>
   );
 };

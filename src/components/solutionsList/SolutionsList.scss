@@ -5,9 +5,14 @@
   padding: 2rem;
   margin-top: 2rem;
   width: 100%;
+  box-shadow: 0 0 5px #1a1c23;
 
-  ul {
+  ol {
     font-family: Kalam, Montserrat, sans-serif;
     font-size: 20px;
+    padding: 1.5rem;
+    li {
+      margin-bottom: 10px;
+    }
   }
 }
