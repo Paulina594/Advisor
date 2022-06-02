@@ -38,7 +38,7 @@ export const PageContent = () => {
         </div>
       </div>
       <div className="column answer-wrapper">
-        <CrystalBall />
+        <CrystalBall list={scenarioList} />
       </div>
     </>
   );
