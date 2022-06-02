@@ -3,20 +3,37 @@ import React, { useState } from "react";
 import "./SolutionAddingCard.scss";
 
 type SolutionAddingCardProps = {
-  input: string;
-  handleClick: () => void;
-  handleChange: (e: any) => void;
+  onCardAdded: (scenarioText: string) => void;
 };
 
 export const SolutionAddingCard = (props: SolutionAddingCardProps) => {
-  const { input, handleClick, handleChange } = props;
+  const { onCardAdded } = props;
+
+  const [scenarioTxt, setScenarioTxt] = useState("");
+
+  const handleChange = (e: any) => {
+    setScenarioTxt(e.target.value);
+  };
+
+  const handleClick = () => {
+    if (scenarioTxt !== "") {
+      onCardAdded(scenarioTxt);
+      clearScenarioText();
+    } else {
+      alert("You need to add an answer");
+    }
+  };
+
+  const clearScenarioText = () => {
+    setScenarioTxt("");
+  };
 
   return (
     <div className="input-wrapper">
       <label htmlFor="scenario">Add possible solution:</label>
       <input
         maxLength={115}
-        value={input}
+        value={scenarioTxt}
         id="scenario"
         onChange={handleChange}
       />

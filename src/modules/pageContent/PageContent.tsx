@@ -8,18 +8,9 @@ import "./PageContent.scss";
 
 export const PageContent = () => {
   const [scenarioList, addScenario] = useState<string[]>([]);
-  const [scenarioTxt, setScenarioTxt] = useState("");
 
-  const handleChange = (e: any) => {
-    setScenarioTxt(e.target.value);
-  };
-
-  const handleClick = () => {
-    if (scenarioTxt !== "") {
-      addScenario((prev: string[]) => [...prev, scenarioTxt]);
-
-      setScenarioTxt("");
-    } else alert("You need to add an answer");
+  const handleNewScenarioAdded = (newScenario: string) => {
+    addScenario([...scenarioList, newScenario]);
   };
 
   const description = (
@@ -40,11 +31,7 @@ export const PageContent = () => {
       <div className="column">
         <div className="row">{description}</div>
         <div className="row">
-          <SolutionAddingCard
-            input={scenarioTxt}
-            handleClick={handleClick}
-            handleChange={handleChange}
-          />
+          <SolutionAddingCard onCardAdded={handleNewScenarioAdded} />
         </div>
         <div className="row">
           <SolutionsList list={scenarioList} />
