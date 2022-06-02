@@ -6,6 +6,8 @@ import { PageContent } from "./modules/pageContent/PageContent";
 import "./App.scss";
 
 function App() {
+  // const [scenarioList, addScenario] = scenariosListObj.scenarioList;
+
   return (
     <div className="App">
       <header>
