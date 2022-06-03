@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-
-import { Answer } from "../answer/Answer";
+import React, { useState } from "react";
 
 import magicDust from "../../assets/images/magic-dust.png";
 
@@ -26,7 +24,11 @@ export const CrystalBall = ({ list }: AnswerProps) => {
         <div className="ball">
           <img src={magicDust} className="magic" alt="magic dust" />
           <div className="answer">
-            {answerIndex !== undefined ? list[answerIndex] : ""}
+            {answerIndex !== undefined ? (
+              <div className="scale-up-center">{list[answerIndex]}</div>
+            ) : (
+              ""
+            )}
           </div>
         </div>
         <div className="base" />

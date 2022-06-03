@@ -7,10 +7,17 @@ import { SolutionsList } from "../../components/solutionsList/SolutionsList";
 import "./PageContent.scss";
 
 export const PageContent = () => {
-  const [scenarioList, addScenario] = useState<string[]>([]);
+  const [scenariosList, setScenariosList] = useState<string[]>([]);
 
   const handleNewScenarioAdded = (newScenario: string) => {
-    addScenario([...scenarioList, newScenario]);
+    setScenariosList([...scenariosList, newScenario]);
+  };
+
+  const handleScenarioRemoved = (scenarioIndex: number) => {
+    const newScenariosList = scenariosList.filter((scenario, index) => {
+      return scenarioIndex !== index;
+    });
+    setScenariosList(newScenariosList);
   };
 
   const description = (
@@ -34,11 +41,14 @@ export const PageContent = () => {
           <SolutionAddingCard onCardAdded={handleNewScenarioAdded} />
         </div>
         <div className="row">
-          <SolutionsList list={scenarioList} />
+          <SolutionsList
+            list={scenariosList}
+            onScenarioRemoved={handleScenarioRemoved}
+          />
         </div>
       </div>
       <div className="column answer-wrapper">
-        <CrystalBall list={scenarioList} />
+        <CrystalBall list={scenariosList} />
       </div>
     </>
   );

@@ -9,15 +9,23 @@ type SolutionAddingCardProps = {
 export const SolutionAddingCard = (props: SolutionAddingCardProps) => {
   const { onCardAdded } = props;
 
+  const [lastId, setLastId] = useState(1);
   const [scenarioTxt, setScenarioTxt] = useState("");
 
   const handleChange = (e: any) => {
     setScenarioTxt(e.target.value);
   };
 
-  const handleClick = () => {
+  const enterKeyCheck = (e: any) => {
+    if (e.key === "Enter") {
+      handleAddingScenario();
+    }
+  };
+
+  const handleAddingScenario = () => {
     if (scenarioTxt !== "") {
       onCardAdded(scenarioTxt);
+      setLastId((prev) => prev + 1);
       clearScenarioText();
     } else {
       alert("You need to add an answer");
@@ -35,9 +43,10 @@ export const SolutionAddingCard = (props: SolutionAddingCardProps) => {
         maxLength={115}
         value={scenarioTxt}
         id="scenario"
+        onKeyUp={enterKeyCheck}
         onChange={handleChange}
       />
-      <button type="submit" onClick={handleClick}>
+      <button type="submit" onClick={handleAddingScenario}>
         Add
       </button>
     </div>
