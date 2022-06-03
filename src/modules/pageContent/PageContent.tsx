@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { CrystalBall } from "../../components/crystalBall/CrystalBall";
 import { SolutionAddingCard } from "../../components/solutionAddingCard/SolutionAddingCard";
@@ -7,6 +7,19 @@ import { SolutionsList } from "../../components/solutionsList/SolutionsList";
 import "./PageContent.scss";
 
 export const PageContent = () => {
+  const [scenariosList, setScenariosList] = useState<string[]>([]);
+
+  const handleNewScenarioAdded = (newScenario: string) => {
+    setScenariosList([...scenariosList, newScenario]);
+  };
+
+  const handleScenarioRemoved = (scenarioIndex: number) => {
+    const newScenariosList = scenariosList.filter((scenario, index) => {
+      return scenarioIndex !== index;
+    });
+    setScenariosList(newScenariosList);
+  };
+
   const description = (
     <div className="description">
       <p>
@@ -25,14 +38,17 @@ export const PageContent = () => {
       <div className="column">
         <div className="row">{description}</div>
         <div className="row">
-          <SolutionAddingCard />
+          <SolutionAddingCard onCardAdded={handleNewScenarioAdded} />
         </div>
         <div className="row">
-          <SolutionsList />
+          <SolutionsList
+            list={scenariosList}
+            onScenarioRemoved={handleScenarioRemoved}
+          />
         </div>
       </div>
       <div className="column answer-wrapper">
-        <CrystalBall />
+        <CrystalBall list={scenariosList} />
       </div>
     </>
   );
