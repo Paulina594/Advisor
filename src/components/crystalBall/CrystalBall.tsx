@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import magicDust from "../../assets/images/magic-dust.png";
 
@@ -8,6 +8,10 @@ export type AnswerProps = { list: string[] };
 
 export const CrystalBall = ({ list }: AnswerProps) => {
   const [answerIndex, setAnswerIndex] = useState<number>();
+
+  useEffect(() => {
+    setAnswerIndex(undefined);
+  }, [list]);
 
   const drawAnswerIndex = function () {
     if (list.length >= 2) {

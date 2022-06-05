@@ -9,7 +9,6 @@ type SolutionAddingCardProps = {
 export const SolutionAddingCard = (props: SolutionAddingCardProps) => {
   const { onCardAdded } = props;
 
-  const [lastId, setLastId] = useState(1);
   const [scenarioTxt, setScenarioTxt] = useState("");
 
   const handleChange = (e: any) => {
@@ -25,7 +24,6 @@ export const SolutionAddingCard = (props: SolutionAddingCardProps) => {
   const handleAddingScenario = () => {
     if (scenarioTxt !== "") {
       onCardAdded(scenarioTxt);
-      setLastId((prev) => prev + 1);
       clearScenarioText();
     } else {
       alert("You need to add an answer");
