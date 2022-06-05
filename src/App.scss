@@ -1,6 +1,5 @@
 body {
   width: 100vw;
-  height: 80vh;
   font-family: Montserrat;
   overflow-x: hidden;
 
@@ -20,4 +19,9 @@ body {
   background:radial-gradient(circle at 50% 50%, rgba(103, 103, 103, 1) 0%, rgb(40, 40, 40) 100%);
 }
 
+footer {
+position: absolute;
+  bottom: 0;
+  left: 0;
+}
 
