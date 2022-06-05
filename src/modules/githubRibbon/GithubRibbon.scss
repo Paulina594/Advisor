@@ -1,0 +1,49 @@
+.ribbon-wrapper {
+  position: fixed;
+  top: 50px;
+  right: -50px;
+  transform: rotate(40deg);
+  background-color: #ffffc8;
+  filter: drop-shadow(-15px 5px 10px #000);
+  -webkit-box-shadow: inset 0px 0px 15px 11px rgb(236, 203, 82);
+  -moz-box-shadow: inset 0px 0px 15px 11px rgb(236, 203, 82);
+  box-shadow: inset 0px 0px 20px 11px rgb(236, 203, 82);
+
+  width: 270px;
+  min-height: 40px;
+
+  transition: 0.3s;
+
+  @media screen and (max-width: 768px) {
+    transform: rotate(40deg) translate(0, -100%);
+    width: 250px;
+    top: 40px;
+    right: -60px;
+  }
+
+  &:hover {
+    transform: rotate(40deg) scale(110%);
+
+    @media screen and (max-width: 768px) {
+      transform: rotate(40deg) translate(0, -100%) scale(110%);
+    }
+  }
+
+  .ribbon {
+    border-top: 1px dashed rgba(93, 90, 90, 0.56);
+    border-bottom: 1px dashed rgba(93, 90, 90, 0.56);
+    text-align: center;
+    padding: 5px;
+    margin: 5px auto;
+
+    @media screen and (max-width: 768px) {
+      width: 78px;
+      font-size: 12px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #1a1c23;
+    }
+  }
+}
