@@ -5,11 +5,13 @@ import "./SolutionsList.scss";
 type SolutionsListProps = {
   list: string[];
   onScenarioRemoved: (index: number) => void;
+  reset: () => void;
 };
 
 export const SolutionsList = ({
   list,
   onScenarioRemoved,
+  reset,
 }: SolutionsListProps) => {
   useEffect(() => {}, [list]);
 
@@ -31,6 +33,7 @@ export const SolutionsList = ({
         <div className="solutions">
           <p>List of possible answers:</p>
           <ol>{answers}</ol>
+          <button onClick={reset}>Clear the list</button>
         </div>
       )}
     </>

@@ -8,17 +8,22 @@
   -webkit-box-shadow: inset 0px 0px 15px 11px rgb(236, 203, 82);
   -moz-box-shadow: inset 0px 0px 15px 11px rgb(236, 203, 82);
   box-shadow: inset 0px 0px 20px 11px rgb(236, 203, 82);
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-weight: bolder;
 
   width: 270px;
   min-height: 40px;
 
   transition: 0.3s;
 
+  z-index: 100;
+
   @media screen and (max-width: 768px) {
     transform: rotate(40deg) translate(0, -100%);
     width: 250px;
-    top: 40px;
-    right: -60px;
+    top: 48px;
+    right: -50px;
   }
 
   &:hover {
@@ -37,7 +42,7 @@
     margin: 5px auto;
 
     @media screen and (max-width: 768px) {
-      width: 78px;
+      width: 100px;
       font-size: 12px;
     }
 

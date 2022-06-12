@@ -6,7 +6,7 @@
     width: 500px;
     height: 500px;
     border-radius: 50%;
-    filter: blur(0px) drop-shadow(0 0 22px #72d6e5);
+    filter: drop-shadow(0 0 22px #72d6e5);
     animation: magic-shadow 10s infinite both;
 
 
@@ -25,13 +25,17 @@
     /* global 92%+ browsers support */
     background: radial-gradient(circle at 50% 50%, rgb(101, 208, 241) 0%, rgba(141, 68, 255, 1) 100%);
 
+    &.drawing {
+      animation: drawing 5s both linear;
+    }
+
     @media screen and (max-width: 768px) {
       width: 300px;
       height: 300px;
     }
     @media screen and (max-width: 576px) {
-      width: 250px;
-      height: 250px;
+      width: 230px;
+      height: 230px;
     }
 
     .answer {
@@ -67,6 +71,7 @@
       }
       @media screen and (max-width: 576px) {
         width: 230px;
+        bottom: 1px;
       }
     }
   }
@@ -104,7 +109,7 @@
 }
 
 .button {
-  min-width: 300px;
+  min-width: 250px;
   min-height: 60px;
   font-family: 'Montserrat', sans-serif;
   font-size: 22px;
@@ -133,7 +138,7 @@
     transform: translateY(-6px);
   }
 
-  &::after {
+  &:after {
     content: '';
     width: 10px;
     height: 10px;
@@ -152,10 +157,10 @@
     }
   }
 
-  &::before {
+  &:before {
     content: '';
     border-radius: 1000px;
-    min-width: calc(300px + 12px);
+    min-width: calc(250px + 12px);
     min-height: calc(60px + 12px);
     border: 6px solid #00FFCB;
     box-shadow: 0 0 60px rgba(0, 255, 203, .64);
@@ -179,7 +184,7 @@
     opacity: 1;
   }
   100% {
-    width: 300px;
+    width: 260px;
     height: 100px;
     opacity: 0;
   }
@@ -229,27 +234,52 @@
     filter: drop-shadow(0 0 22px #72d6e5);
   }
 }
-.scale-up-center {
-  -webkit-animation: scale-up-center 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) backwards;
-  animation: scale-up-center 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) backwards;
+.scale-up-center-answer {
+  opacity: 0;
+  -webkit-animation: scale-up-center 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) forwards 2.5s;
+  animation: scale-up-center 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) forwards 2.5s;
 }
 @-webkit-keyframes scale-up-center {
   0% {
     -webkit-transform: scale(0.5);
     transform: scale(0.5);
+    filter: blur(1.5rem);
+  }
+  50% {
+    filter: blur(1rem);
   }
   100% {
     -webkit-transform: scale(1);
     transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    filter: blur(0);
   }
 }
 @keyframes scale-up-center {
   0% {
     -webkit-transform: scale(0.5);
     transform: scale(0.5);
+    filter: blur(1.5rem);
+  }
+  50% {
+    filter: blur(1rem);
   }
   100% {
     -webkit-transform: scale(1);
     transform: scale(1);
+    opacity: 1;
+    filter: blur(0)
+  }
+}
+
+@keyframes drawing {
+  from {
+    filter: hue-rotate(0);
+  }
+  50% {
+    filter: hue-rotate(230deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
   }
 }

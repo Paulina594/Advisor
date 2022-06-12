@@ -33,6 +33,10 @@ export const PageContent = () => {
     </div>
   );
 
+  const clearList = () => {
+    setScenariosList([]);
+  };
+
   return (
     <>
       <div className="column">
@@ -44,6 +48,7 @@ export const PageContent = () => {
           <SolutionsList
             list={scenariosList}
             onScenarioRemoved={handleScenarioRemoved}
+            reset={() => clearList()}
           />
         </div>
       </div>
