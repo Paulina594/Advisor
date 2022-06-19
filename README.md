@@ -75,6 +75,8 @@ Designed and build by Paulina Drozdz.
 
 ## How to run the project
 
+Demo available on www.advisor.paulinadrozdz.pl
+
 ### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -130,7 +132,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## Project status
 
-Project finished. Need to be deployed. 
+Project finished.
 
 ## Other tools used 
 - FontAmesome
